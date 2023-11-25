@@ -3,9 +3,7 @@ const dotenv = require("dotenv").config();
 
 const app = express();
 
-app.get('/api/contacts', (req, res) => {
-    res.json({Message: "Get all contacts"});
-});
+app.use("/api/contacts", require("./routes/contactsRoutes"));
 
 const port = process.env.PORT || 5000;
 
